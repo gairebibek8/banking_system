@@ -1,1 +1,1 @@
-Utilize sql and nosql database to implement a full stack project.
+To develop a robust banking transaction management system that leverages the strengths of MySQL for transactional integrity and MongoDB for flexible user management and session handling. This system aims to facilitate seamless operations such as deposits, withdrawals, and balance inquiries with high security and scalability
