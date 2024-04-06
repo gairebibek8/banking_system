@@ -9,6 +9,9 @@ const app = express();
 // set EJS as view engine
 app.set('view engine', 'ejs');
 
+// static file path
+app.use(express.static("public"));
+
 
 app.get("/", (req, res) => {
     res.render("login");
