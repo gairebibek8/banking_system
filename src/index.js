@@ -1,10 +1,15 @@
 const express = require('express');
 const path = require("path");
 const bcrypt = require("bcrypt");
-
+const collection = require("./config");
 
 const app = express();
 
+// convert data into json format
+app.use(express.json());
+
+
+app.use(express.urlencoded({ extended: false }));
 
 // set EJS as view engine
 app.set('view engine', 'ejs');
@@ -23,7 +28,7 @@ app.get("/signup", (req, res) => {
 });
 
 
-const port = 5000;
+const port = 5001;
 app.listen(port, () => {
     console.log(`Server running on Port: ${port}`);
 })
