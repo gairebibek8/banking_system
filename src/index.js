@@ -39,7 +39,7 @@ app.post("/signup", async (req, res) => {
     const existingUser = await collection.findOne({ name: data.name });
 
     if (existingUser) {
-        res.send('User already exists. Please choose a different username.');
+        res.send(`<div style="font-size: 20px; text-align: center;">User already exists. Please choose a different username: <a href="/signup">Signup</a></div>`);
     } else {
         // Hash the password using bcrypt
         const saltRounds = 10; // Number of salt rounds for bcrypt
@@ -48,6 +48,8 @@ app.post("/signup", async (req, res) => {
         data.password = hashedPassword; // Replace the original password with the hashed one
 
     const userdata = await collection.insertMany(data);
+    res.status(201).send(`<div style="font-size: 20px; text-align: center;">User registered successfully. <a href="/">Login here</a>.</div>`);
+
     console.log(userdata);
 
     }
