@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
-const connect = mongoose.connect("mongodb://localhost:27017/login");
+const connect = mongoose.connect("mongodb://127.0.0.1:27017/login");
+
 
 // check databse connection
 connect.then(() => {
     console.log("Database connected successfully");
 })
-.catch(() => {
-    console.log("Database could not be connected");
+.catch((error) => {
+    console.log("Database could not be connected", error);
 });
 
 // Create Schema
