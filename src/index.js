@@ -27,7 +27,6 @@ app.get("/signup", (req, res) => {
     res.render("signup");
 });
 
-
 // Register User
 app.post("/signup", async (req, res) => {
 
@@ -79,7 +78,7 @@ app.post("/login", async (req, res) => {
 
 
 // define port connection for user
-const port = 5000;
+const port = 5001;
 app.listen(port, () => {
     console.log(`Server running on Port: ${port}`);
 })
