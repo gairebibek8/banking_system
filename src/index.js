@@ -28,21 +28,7 @@ app.get("/signup", (req, res) => {
 });
 
 
-// Register User
-app.post("/signup", async (req, res) => {
-
-    const data = {
-        name: req.body.username,
-        password: req.body.password
-    }
-
-    const userdata = await collection.insertOne(data);
-    console.log(userdata);
-});
-
-
-// define port connection for user
-const port = 5000;
+const port = 5001;
 app.listen(port, () => {
     console.log(`Server running on Port: ${port}`);
 })
